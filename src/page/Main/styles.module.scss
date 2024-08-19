@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+}
+
+.button {
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px 16px;
+  background-color: #1d4ed8;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2563eb;
+    transition: 0.3s;
+  }
+}
+
+.decks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}

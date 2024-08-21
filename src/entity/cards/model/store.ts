@@ -8,7 +8,7 @@ interface State {
     getDecks: () => void
     isLoading: boolean
     error: string | null
-    updateDeck: (payload: Deck) => void
+    updateDeck: (payload: Deck, onSuccess: () => void) => void
 }
 
 export const useCardsStore = create<State>()(
@@ -29,10 +29,11 @@ export const useCardsStore = create<State>()(
                 set({isLoading: false})
             }
         },
-        updateDeck: async (payload: Deck) => {
+        updateDeck: async (payload: Deck, onSuccess: () => void) => {
             set({isLoading: true})
             try {
                 await DecksApi.updateDeck(payload)
+                onSuccess()
             } catch (e) {
                 const error = e as AxiosError
                 set({error: error.message})

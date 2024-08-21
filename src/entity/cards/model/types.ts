@@ -1,5 +1,5 @@
 export interface Deck {
-    id: number
+    id: string
     title: string
-    cards: string[]
+    cards: Record<string, string>[]
 }

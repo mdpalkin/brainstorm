@@ -1,0 +1,76 @@
+@mixin button {
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  background-color: #475569;
+
+  &:hover {
+    background-color: #64748b;
+    transition: 0.3s;
+  }
+}
+
+.wrapper {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  span {
+    background-color: transparent;
+  }
+}
+
+.input {
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+  background-color: #F9FAFB;
+  height: 40px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: #334155;
+  border-radius: 4px;
+}
+
+.input_pair {
+  display: flex;
+  gap: 16px;
+  background-color: transparent;
+  align-items: end;
+
+  svg {
+    background-color: transparent;
+  }
+}
+
+.add_button {
+  @include button;
+
+}
+
+.submit {
+  @include button;
+  background-color: #1d4ed8;
+
+  &:hover {
+    background-color: #2563eb;
+  }
+}

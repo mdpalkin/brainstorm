@@ -1,16 +1,9 @@
 import styles from './styles.module.scss'
-import {useEffect} from "react";
 import {useCardsStore} from "../../entity/cards";
 import {DeckItem} from "./Deck";
 
 export const Main = () => {
     const decks = useCardsStore(state => state.decks)
-    const getDecks = useCardsStore(state => state.getDecks)
-
-
-    useEffect(() => {
-        getDecks()
-    }, [])
 
     return (
         <div className={styles.container}>

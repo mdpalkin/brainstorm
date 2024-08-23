@@ -3,10 +3,12 @@ import {RouterProvider} from "react-router-dom";
 import {router} from "./Router.tsx";
 import {useCardsStore} from "../entity/cards";
 import {useEffect} from "react";
+import {Preloader} from "../shared/ui/Preloader";
 
 export const App = () => {
 
     const getDecks = useCardsStore(state => state.getDecks)
+    const isLoading = useCardsStore(state => state.isLoading)
 
 
     useEffect(() => {
@@ -15,7 +17,7 @@ export const App = () => {
 
     return (
         <div className={'app'}>
-            <RouterProvider router={router} />
+            {isLoading ? <Preloader /> : <RouterProvider router={router} />}
         </div>
     )
 }

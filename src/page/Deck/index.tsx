@@ -20,7 +20,7 @@ export const Deck = () => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>{currentDeck?.title}</div>
-            <CardModal />
+            <CardModal cards={currentDeck.cards} />
             <CardsForm deck={currentDeck} />
         </div>
     )

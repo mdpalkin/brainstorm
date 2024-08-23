@@ -8,5 +8,8 @@ export const DecksApi = {
     updateDeck(payload: Deck) {
         const { id, ...data } = payload
         return instance.put(`/decks/${id}`, data)
+    },
+    deleteDeck(id: string) {
+        return instance.delete(`/decks/${id}`)
     }
 }

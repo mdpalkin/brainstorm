@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import {useCardsStore} from "../../entity/cards";
-import {DeckItem} from "./Deck";
+import {DeckItem} from "./DeckItem";
 
 export const Main = () => {
     const decks = useCardsStore(state => state.decks)

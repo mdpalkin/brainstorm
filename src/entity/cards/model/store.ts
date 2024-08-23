@@ -9,6 +9,7 @@ interface State {
     isLoading: boolean
     error: string | null
     updateDeck: (payload: Deck, onSuccess: () => void) => void
+    deleteDeck: (id: string) => void
 }
 
 export const useCardsStore = create<State>()(
@@ -37,6 +38,17 @@ export const useCardsStore = create<State>()(
             } catch (e) {
                 const error = e as AxiosError
                 set({error: error.message})
+            }
+        },
+        deleteDeck: async (id: string)=> {
+            set({isLoading: true})
+            try {
+                await DecksApi.deleteDeck(id)
+            } catch (e) {
+                const error = e as AxiosError
+                set({error: error.message})
+            } finally {
+                set({isLoading: false})
             }
         }
     }),

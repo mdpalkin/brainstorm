@@ -5,3 +5,16 @@
 .title {
   font-size: 40px;
 }
+
+.empty {
+  width: 500px;
+  font-size: 24px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #334155;
+  border-radius: 8px;
+  width: 100%;
+}

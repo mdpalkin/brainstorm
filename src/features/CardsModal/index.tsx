@@ -36,8 +36,10 @@ export const CardModal = (props: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.carousel}>
-                <FaArrowAltCircleLeft size={50} className={classNames(styles.arrow, styles.arrowLeft)}
-                                      onClick={handlePrevCardView}/>
+                <FaArrowAltCircleLeft
+                    size={50}
+                    className={classNames(styles.arrow, styles.arrowLeft)}
+                    onClick={handlePrevCardView}/>
                 <motion.div
                     initial={{x: 300, opacity: 0}}
                     animate={{x: 0, opacity: 1}}

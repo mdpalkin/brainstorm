@@ -1,7 +1,7 @@
 import {SubmitHandler, useFieldArray, useForm} from "react-hook-form";
 
 import {MdDeleteSweep} from "react-icons/md";
-import {Card, Deck, useCardsStore} from "../../../entity/cards";
+import {Card, Deck, useDecksStore} from "../../../entity/cards";
 
 import styles from './styles.module.scss'
 import { useEffect } from 'react'
@@ -13,8 +13,8 @@ type Props = {
 export const CardsForm = (props: Props) => {
     const { deck } = props
 
-    const updateDeck = useCardsStore(state => state.updateDeck)
-    const getDecks = useCardsStore(state => state.getDecks)
+    const updateDeck = useDecksStore(state => state.updateDeck)
+    const getDecks = useDecksStore(state => state.getDecks)
 
     const {
        control,

@@ -1,14 +1,14 @@
 import './index.scss'
 import {RouterProvider} from "react-router-dom";
 import {router} from "./Router.tsx";
-import {useCardsStore} from "../entity/cards";
+import {useDecksStore} from "../entity/cards";
 import {useEffect} from "react";
 import {Preloader} from "../shared/ui/Preloader";
 
 export const App = () => {
 
-    const getDecks = useCardsStore(state => state.getDecks)
-    const isLoading = useCardsStore(state => state.isLoading)
+    const getDecks = useDecksStore(state => state.getDecks)
+    const isLoading = useDecksStore(state => state.isLoading)
 
 
     useEffect(() => {

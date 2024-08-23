@@ -9,10 +9,10 @@ interface State {
     isLoading: boolean
     error: string | null
     updateDeck: (payload: Deck, onSuccess: () => void) => void
-    deleteDeck: (id: string) => void
+    deleteDeck: (id: string, onSuccess: () => void) => void
 }
 
-export const useCardsStore = create<State>()(
+export const useDecksStore = create<State>()(
 
     (set) => ({
         decks: [],
@@ -40,10 +40,11 @@ export const useCardsStore = create<State>()(
                 set({error: error.message})
             }
         },
-        deleteDeck: async (id: string)=> {
+        deleteDeck: async (id: string, onSuccess: () => void)=> {
             set({isLoading: true})
             try {
                 await DecksApi.deleteDeck(id)
+                onSuccess()
             } catch (e) {
                 const error = e as AxiosError
                 set({error: error.message})

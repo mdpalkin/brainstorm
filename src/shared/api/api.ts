@@ -11,5 +11,8 @@ export const DecksApi = {
     },
     deleteDeck(id: string) {
         return instance.delete(`/decks/${id}`)
+    },
+    createDeck(payload: Partial<Deck>) {
+        return instance.post('/decks', payload)
     }
 }

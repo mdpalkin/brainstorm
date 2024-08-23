@@ -10,6 +10,7 @@ interface State {
     error: string | null
     updateDeck: (payload: Deck, onSuccess: () => void) => void
     deleteDeck: (id: string, onSuccess: () => void) => void
+    createDeck: (payload: Partial<Deck>, onSuccess: () => void ) => void
 }
 
 export const useDecksStore = create<State>()(
@@ -44,6 +45,18 @@ export const useDecksStore = create<State>()(
             set({isLoading: true})
             try {
                 await DecksApi.deleteDeck(id)
+                onSuccess()
+            } catch (e) {
+                const error = e as AxiosError
+                set({error: error.message})
+            } finally {
+                set({isLoading: false})
+            }
+        },
+        createDeck: async (payload: Partial<Deck>, onSuccess: () => void) => {
+            set({isLoading: true})
+            try {
+                await DecksApi.createDeck(payload)
                 onSuccess()
             } catch (e) {
                 const error = e as AxiosError

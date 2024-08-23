@@ -1,3 +1,5 @@
+@import 'src/app/mixins.scss';
+
 @mixin button {
   border-radius: 4px;
   font-size: 20px;
@@ -25,19 +27,7 @@
 }
 
 .input {
-  display: block;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  width: 100%;
-  font-size: 14px;
-  color: #111827;
-  background-color: #F9FAFB;
-  height: 40px;
-
-  &:focus {
-    outline: none;
-  }
+  @include input
 }
 
 .container {

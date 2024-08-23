@@ -3,11 +3,13 @@ import {useDecksStore} from "../../entity/cards";
 import {DeckItem} from "./DeckItem";
 import { useState } from 'react'
 import { ConfirmDeleteModal } from '../../features/ConfirmDeleteModal'
+import { AddDeckModal } from '../../features/AddDeckModal'
 
 export const Main = () => {
     const decks = useDecksStore(state => state.decks)
 
     const [confirmDeleteModalState, setConfirmDeleteModalState] = useState({ isOpen: false, currentDeckId: null as string | null })
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
     const deleteDeck = useDecksStore(state => state.deleteDeck)
     const getDecks = useDecksStore(state => state.getDecks)
@@ -21,15 +23,25 @@ export const Main = () => {
         deleteDeck(confirmDeleteModalState.currentDeckId, getDecks)
         setConfirmDeleteModalState({isOpen: false, currentDeckId: null})
     }
+
+    const handleOpenAddDeckModal = () => {
+        setIsAddModalOpen(true)
+    }
     
+
 
     return (
         <div className={styles.container}>
-            <button className={styles.button}>Создать колоду</button>
+            <button className={styles.button} onClick={handleOpenAddDeckModal}>Создать колоду</button>
             <div className={styles.decks}>
                 {decks.map(deck => <DeckItem handleDeleteDeck={handleDeleteDeck} cards={deck.cards} key={deck.id} title={deck.title} id={deck.id} />)}
             </div>
-            <ConfirmDeleteModal confirmDeleteDeck={confirmDeleteDeck} isOpen={confirmDeleteModalState.isOpen} setIsOpen={setConfirmDeleteModalState} />
+            <ConfirmDeleteModal
+                confirmDeleteDeck={confirmDeleteDeck}
+                isOpen={confirmDeleteModalState.isOpen}
+                setIsOpen={setConfirmDeleteModalState}
+            />
+            <AddDeckModal onSuccess={getDecks} isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} />
         </div>
     )
 }

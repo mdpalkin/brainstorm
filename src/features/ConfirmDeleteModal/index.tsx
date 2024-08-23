@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const ConfirmDeleteModal = (props: Props) => {
-    const { isOpen, setIsOpen} = props;
+    const { isOpen, setIsOpen, confirmDeleteDeck} = props;
 
     return (
         <Modal
@@ -32,7 +32,7 @@ export const ConfirmDeleteModal = (props: Props) => {
                     >
                         Отменить
                     </button>
-                    <button onClick={props.confirmDeleteDeck} className={styles.confirmButton}>
+                    <button onClick={confirmDeleteDeck} className={styles.confirmButton}>
                         Удалить
                     </button>
                 </div>

@@ -1,9 +1,9 @@
-import styles from './styles.module.scss'
-import {useDecksStore} from "../../entity/cards";
-import {DeckItem} from "./DeckItem";
 import { useState } from 'react'
-import { ConfirmDeleteModal } from '../../features/ConfirmDeleteModal'
+import { useDecksStore } from "../../entity/cards"
 import { AddDeckModal } from '../../features/AddDeckModal'
+import { ConfirmDeleteModal } from '../../features/ConfirmDeleteModal'
+import { DeckItem } from "./DeckItem"
+import styles from './styles.module.scss'
 
 export const Main = () => {
     const decks = useDecksStore(state => state.decks)

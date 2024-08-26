@@ -1,8 +1,8 @@
-import Modal from 'react-modal';
+import Modal from 'react-modal'
 
-import styles from './styles.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useDecksStore } from '../../entity/cards'
+import styles from './styles.module.scss'
 
 type Props = {
     isOpen: boolean;

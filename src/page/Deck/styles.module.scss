@@ -1,3 +1,5 @@
+@import 'src/app/mixins.scss';
+
 .container {
   padding: 40px 0;
 }
@@ -17,4 +19,19 @@
   background-color: #334155;
   border-radius: 8px;
   width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between
+}
+
+.button {
+  @include button;
+
+  background-color: #1d4ed8;
+
+  &:hover {
+    background-color: #2563eb;
+  }
 }

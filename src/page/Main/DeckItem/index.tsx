@@ -17,7 +17,7 @@ export const DeckItem = (props: Props) => {
 
 
     const handleClickDeck = () => {
-        navigate(`:?id=${id}`)
+        navigate(`/deck/${id}`);
     }
     return (
         <div className={styles.container} onClick={handleClickDeck}>

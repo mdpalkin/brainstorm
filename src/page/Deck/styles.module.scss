@@ -35,3 +35,26 @@
     background-color: #2563eb;
   }
 }
+
+.carousel {
+  min-height: 500px;
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px 0;
+}

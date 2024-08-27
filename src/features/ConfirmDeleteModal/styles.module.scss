@@ -87,3 +87,30 @@
         transform: scale(1);
     }
 }
+
+@media screen and (max-width: 726px) {
+    .modalContent {
+        width: 100%;
+        margin: 0 20px;
+    }
+
+    .modalHeader {
+        font-size: 36px;
+    }
+
+    .modalText {
+        font-size: 28px;
+    }
+
+    .cancelButton,
+    .confirmButton {
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .modalActions {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+    
+}

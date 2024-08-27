@@ -1,0 +1,48 @@
+@import 'src/app/mixins.scss';
+
+.container {
+	margin-top: 50px;
+}
+
+.icon {
+	align-self: flex-end;
+}
+
+.icon {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	margin: 16px 0;
+	cursor: pointer;
+
+	svg {
+		fill: #94a3b8;
+	}
+}
+
+.counter {
+	display: flex;
+	justify-content: center;
+	margin: 16px 0;
+	font-size: 20px;
+}
+.buttons {
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	gap: 10px;
+}
+
+.failure {
+	@include button;
+}
+
+.success {
+	@include button;
+
+	background-color: #166534;
+
+	&:hover {
+		background-color: #15803d;
+	}
+}

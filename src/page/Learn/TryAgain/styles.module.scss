@@ -1,0 +1,68 @@
+@import 'src/app/mixins.scss';
+
+.try_again {
+	width: 100%;
+	min-height: 500px;
+	margin: 0 auto;
+	background-color: #334155;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.text {
+	background-color: inherit;
+	max-width: 200px;
+}
+
+.subtitle {
+	font-size: 20px;
+	background-color: inherit;
+}
+
+.stats {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	background-color: inherit;
+	margin-top: 16px;
+	min-width: 200px;
+}
+
+.learned {
+	display: flex;
+	justify-content: space-between;
+	background-color: #15803d;
+	color: #bbf7d0;
+	border-radius: 8px;
+	padding: 8px;
+}
+
+.in_progress {
+	display: flex;
+	justify-content: space-between;
+	background-color: #ca8a04;
+	color: #fef08a;
+	border-radius: 8px;
+	padding: 8px
+
+}
+
+.repeat {
+	@include button;
+
+	margin-top: 50px;
+	background-color: #64748b;
+
+	&:hover {
+		background-color: #94a3b8
+	}
+}
+
+.text {
+	background-color: inherit;
+	color: inherit;
+}

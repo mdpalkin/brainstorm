@@ -1,0 +1,38 @@
+@import 'src/app/mixins.scss';
+
+.container {
+	min-height: 500xp;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 16px;
+	background-color: #334155;
+	min-height: 500px;
+	border-radius: 8px;
+	margin-top: 50px;
+}
+
+.title {
+	font-size: 20px;
+}
+
+.icon {
+	fill: #facc15;
+}
+
+.again {
+	@include button;
+
+	background-color: #166534;
+
+	&:hover {
+		background-color: #15803d;
+	}
+
+}
+
+.return {
+	@include button;
+}

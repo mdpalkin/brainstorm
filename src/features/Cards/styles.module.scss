@@ -9,7 +9,6 @@
 
 .value {
 	border-radius: 8px;
-
 	width: 100%;
 	height: 500px;
 	background-color: #334155;
@@ -17,4 +16,16 @@
 	align-items: center;
 	justify-content: center;
 	font-size: 24px;
+}
+
+@media screen and (max-width: 726px) {
+	.card {
+		width: 100%;
+		min-height: 100vh;
+	}	
+
+	.value {
+		min-height: 100vh;
+		font-size: 32px;
+	}
 }
